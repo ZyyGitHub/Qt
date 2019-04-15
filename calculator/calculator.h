@@ -27,7 +27,19 @@ private slots:
     void setMemory();
     void addTomemory();
 private:
+    Button *createButton(const QString &text, const char *member);
+    void abortOperation();
+    bool calculate(double rightOperand,const QString &pendingOperator);
+    double sumInMemory;
+    double sunSoFar;
+    double factorSpfar;
+    QString pendingAdditiveOperator;
+    QString pendingMultiplicateOperator;
+    bool waitingForOperand;
+    QLineEdit *display;
 
+    enum{NumDigitButtons = 10};
+    Button *digitButton[NumDigitButtons];
 };
 
 #endif // CALCULATOR_H
